@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Trinity - Mobius Instruments Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Trinity";
+        var mkdocs_page_input_path = "Trinity.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Mobius Instruments Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Trinity</a>
+    <ul class="current">
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Mobius Instruments Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Trinity</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h2 id="overview">Overview</h2>
+<p><strong>Multidimensional Filter</strong>
+- last updated June 6, 2024</p>
+<h2 id="installation">Installation</h2>
+<ol>
+<li>Ensure power supply provides 60mA for both +12V and -12V.</li>
+<li>Connect module to power bus using provided ribbon cable, aligning the red stripe correctly.</li>
+<li>Secure module in your case with included screws.</li>
+</ol>
+<h2 id="controls-and-inputs">Controls and Inputs</h2>
+<ul>
+<li><strong>Audio Inputs (IN1, IN2, IN3):</strong><ul>
+<li>Accepts AC signals.</li>
+<li>Features attenuator and drive control (distortion past 1 o'clock).</li>
+</ul>
+</li>
+<li><strong>Frequency Modulation (FM) Input:</strong><ul>
+<li>Connects to frequency modulation control attenuverter.</li>
+<li>Acts as fine-tune for cutoff frequency (1-octave range) when unplugged.</li>
+</ul>
+</li>
+<li><strong>Frequency (FREQ) Input:</strong><ul>
+<li>1-octave-per-volt control over cutoff frequency (stays in tune up to 4 octaves).</li>
+<li>Temperature drift uncompensated.</li>
+</ul>
+</li>
+<li><strong>Resonance (RES) Input and Control:</strong><ul>
+<li>Controls feedback and can drive filter into self-oscillation.</li>
+<li>CV is summed with control voltage.</li>
+<li>Resonance is sensitive to signal input levels, if you hear no change before self-oscillation try attenuating the signal.</li>
+</ul>
+</li>
+<li><strong>Mode Input and Control:</strong><ul>
+<li>CV input of 5V for morphing between BP, LP, NOTCH18/6, and HP modes.</li>
+<li>In Scanner mode, boosts selected mode's input channel volume.</li>
+</ul>
+</li>
+<li><strong>Level Input:</strong><ul>
+<li>Controls end-chain VCA's level.</li>
+<li>Slider attenuates CV signal, normalized to 5V when unplugged.</li>
+</ul>
+</li>
+<li><strong>Filter Type Switch:</strong><ul>
+<li>Selects between Morph Mixer and Scanner filter types.</li>
+</ul>
+</li>
+</ul>
+<h2 id="features">Features</h2>
+<ul>
+<li><strong>Morph Mixer:</strong><ul>
+<li>The 3 inputs are unity mixed and routed into the filter core depending on mode position.</li>
+<li>Blend between filter response modes (BP, LP, Notch, HP).</li>
+</ul>
+</li>
+<li>
+<p><strong>Scanner:</strong></p>
+<ul>
+<li>Frequency control sets wave position. </li>
+<li>IN1 Signal routes to Lowpass response. Signal will be fully open 5 o'clock position of frequency knob</li>
+<li>IN2 Signal routes to Bandpass response. (highpass 6 + lowpass 18) The signal is most pronounced near the centre position of frequency knob.</li>
+<li>IN3 Signal routes to Highpass response. Signal will be fully open 7 o'clock position of frequency knob</li>
+<li>Boosts selected mode's input channel volume.</li>
+</ul>
+</li>
+<li>
+<p><strong>Filter responses:</strong></p>
+<ul>
+<li>18db Low pass</li>
+<li>12db Band pass</li>
+<li>6db High pass</li>
+</ul>
+<p>A notch filter can be achieved by positioning the mode knob between LP and HP modes.</p>
+</li>
+</ul>
+<h2 id="tips-and-tricks">Tips and Tricks</h2>
+<ul>
+<li>Use FM input for pitch modulations.</li>
+<li>Drive controls add warmth and character.</li>
+<li>Achieve self-oscillation by increasing resonance.</li>
+<li>In Scanner mode, use different signals in each input for dynamic transitions.</li>
+<li>Experiment with unconventional CV connections and modulation sources.</li>
+</ul>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<ul>
+<li>Ensure secure power bus connection and correct power supply.</li>
+<li>Check all connections and correct jacks.</li>
+<li>Power-cycle Eurorack case if module isn't functioning.</li>
+<li>Hot audio signals will sometimes cause the filter to latch in scan type and bp modes. Reduce the signal level with attenuator if this happens. </li>
+</ul>
+<h2 id="specifications">Specifications</h2>
+<ul>
+<li><strong>Width:</strong> 12hp</li>
+<li><strong>Depth:</strong> 25mm</li>
+<li><strong>Power Consumption:</strong> +12V: 60mA, -12V: 60mA</li>
+<li><strong>Filter Types:</strong> Low-pass, High-pass, Band-pass, Notch</li>
+<li><strong>Modulation Inputs:</strong> FM, FREQ, RES, Mode, Level</li>
+<li><strong>Audio Inputs:</strong> 3 x AC-coupled inputs with attenuator and drive control</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../about/" class="btn btn-neutral float-right" title="About">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../about/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
